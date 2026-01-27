@@ -47,18 +47,3 @@ def check_diagonal_up(board, player):
             if (board[row][col] == chip and board[row-1][col+1] == chip and board[row-2][col+2] == chip and board[row-3][col+3]) == chip:
                 return True
     return False
-
-
-# board = [
-#     [" ", " ", " ", " ", " ", " ", " "],
-#     [" ", " ", " ", " ", " ", " ", " "],
-#     [" ", " ", " ", " ", " ", " ", " "],
-#     ["X", " ", " ", " ", " ", " ", " "],
-#     [" ", "X", " ", " ", " ", " ", " "],
-#     [" ", " ", "X", " ", " ", " ", " "],
-#     [" ", " ", " ", "X", " ", " ", " "]
-# ]
-
-# player = 0
-
-# print(check_diagonal_down(board, player))

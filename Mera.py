@@ -17,8 +17,8 @@ def input_player(spieler):
         spieler_2 = input("Spieler 2 bitte benennen: ")
         spieler.append(spieler_2)
 
-def generate_board():
-    spielfeld = [[" " for _ in range(7)] for _ in range(6)]
+def generate_board(spielfeld):
+    # spielfeld = [[" " for _ in range(7)] for _ in range(6)]
     print("    1   2   3   4   5   6   7")
     for i in range(6):
         print(i+1, " ", spielfeld[i][0], "|", spielfeld[i][1], "|", spielfeld[i][2], "|", spielfeld[i][3], "|", spielfeld[i][4], "|", spielfeld[i][5], "|", spielfeld[i][6])
