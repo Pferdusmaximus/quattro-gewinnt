@@ -7,13 +7,15 @@ def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
 #Spielereingabe
-def input_player():
+def input_player(spieler):
     spieler_1 = ""
     while spieler_1.strip() == "":
         spieler_1 = input("Spieler 1 bitte benennen: ")
+        spieler.append(spieler_1)
     spieler_2 = ""
     while spieler_2.strip() == "":
         spieler_2 = input("Spieler 2 bitte benennen: ")
+        spieler.append(spieler_2)
 
 def generate_board():
     spielfeld = [[" " for _ in range(7)] for _ in range(6)]
