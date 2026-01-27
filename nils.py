@@ -1,3 +1,5 @@
+import christina
+
 def move(spielfeld, aktueller_spieler):
     while True:
         try:
@@ -30,3 +32,10 @@ def check_horizontal(spielfeld, aktueller_spieler):
                 return True
             
     return False
+
+
+def check_win():
+    check_horizontal()
+    christina.check_diagonal_down()
+    christina.check_diagonal_up()
+    christina.check_vertical()
