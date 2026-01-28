@@ -26,13 +26,17 @@ def move(spielfeld, aktueller_spieler):
 
 
 def check_horizontal(spielfeld, aktueller_spieler):
+    if aktueller_spieler == 0:
+        zeichen = "X"
+    elif aktueller_spieler == 1:
+        zeichen = "O"
     for zeile in range(6):
 
         for spalte in range(4): 
-            if (spielfeld[zeile][spalte] == aktueller_spieler and
-                spielfeld[zeile][spalte+1] == aktueller_spieler and
-                spielfeld[zeile][spalte+2] == aktueller_spieler and
-                spielfeld[zeile][spalte+3] == aktueller_spieler):
+            if (spielfeld[zeile][spalte] == zeichen and
+                spielfeld[zeile][spalte+1] == zeichen and
+                spielfeld[zeile][spalte+2] == zeichen and
+                spielfeld[zeile][spalte+3] == zeichen):
                 return True
             
     return False
