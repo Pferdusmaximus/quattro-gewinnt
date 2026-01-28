@@ -1,13 +1,17 @@
 import christina
 
 def move(spielfeld, aktueller_spieler):
+    if aktueller_spieler == 0:
+        zeichen = "X"
+    elif aktueller_spieler == 1:
+        zeichen = "O"
     while True:
         try:
             spalte = int(input("welche spalte möchtest du setzen?: "))
             if spalte >0 and spalte <8:
                 for zeile in range(5, -1, -1):
-                    if spielfeld[zeile][spalte] == " ":
-                        spielfeld[zeile][spalte] = aktueller_spieler
+                    if spielfeld[zeile][spalte-1] == " ":
+                        spielfeld[zeile][spalte-1] = zeichen
                         return
                     
                     else:
@@ -34,8 +38,12 @@ def check_horizontal(spielfeld, aktueller_spieler):
     return False
 
 
-def check_win():
-    check_horizontal()
-    christina.check_diagonal_down()
-    christina.check_diagonal_up()
-    christina.check_vertical()
+def check_win(spielfeld, aktueller_spieler):
+    check1 = check_horizontal(spielfeld, aktueller_spieler)
+    check2 = christina.check_diagonal_down(spielfeld, aktueller_spieler)
+    check3 = christina.check_diagonal_up(spielfeld, aktueller_spieler)
+    check4 = christina.check_vertical(spielfeld, aktueller_spieler)
+    if check1 == True or check2 == True or check3 == True or check4 == True:
+        return True
+    else:
+        return False
