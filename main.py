@@ -27,7 +27,7 @@ def main():
                 aktueller_spieler = 0
 
             Mera.generate_board(spielfeld)
-            nils.move(spielfeld, aktueller_spieler)
+            nils.move(spielfeld, aktueller_spieler,spieler)
             Mera.clear_screen()
 
             check = nils.check_win(spielfeld, aktueller_spieler)

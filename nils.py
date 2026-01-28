@@ -1,13 +1,13 @@
 import christina
 
-def move(spielfeld, aktueller_spieler):
+def move(spielfeld, aktueller_spieler,spieler):
     if aktueller_spieler == 0:
         zeichen = "X"
     elif aktueller_spieler == 1:
         zeichen = "O"
     while True:
         try:
-            spalte = int(input("welche spalte möchtest du setzen?: "))
+            spalte = int(input(f"welche spalte möchte {spieler[aktueller_spieler]} setzen?: "))
             if spalte >0 and spalte <8:
                 for zeile in range(5, -1, -1):
                     if spielfeld[zeile][spalte-1] == " ":
